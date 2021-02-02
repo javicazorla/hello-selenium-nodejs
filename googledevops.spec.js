@@ -15,12 +15,20 @@ describe('google-devops', function() {
   })
   it('google-devops', async function() {
     await driver.get("https://www.google.com/")
-    await driver.switchTo().frame(0)
-    await driver.wait(until.elementLocated(By.css("#introAgreeButton .RveJvd"))).click()| 
-    await driver.switchTo().defaultContent()
+
+    // Versión mejorada del profesor para quitarl el iframe / pop up de Google
+    let frame = await driver.findElement(By.xpath('//iframe'))
+
+    if(frame) {
+      driver.switchTo().frame(frame)
+      let button = await driver.wait(until.elementLocated(By.id('introAgreeButton')),5000)
+      await button.click()
+      driver.switchTo().defaultContent()
+    }
+
     await driver.findElement(By.name("q")).click()
     await driver.findElement(By.name("q")).sendKeys("devops")
     await driver.findElement(By.name("q")).sendKeys(Key.ENTER)
-    await driver.wait(until.elementLocated(By.xpath("//div[3]/div/div/div/a/h3/span"))).click()
+    await driver.wait(until.elementLocated(By.xpath("//div[@id=\'rso\']/div[3]/div/div/div/a/h3/span"))).click()
   })
 })
