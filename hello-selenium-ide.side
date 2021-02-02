@@ -1,0 +1,78 @@
+{
+  "id": "e4353e82-52c4-4282-999e-7441b4785aee",
+  "version": "2.0",
+  "name": "hello-selenium-ide",
+  "url": "https://www.imdb.com",
+  "tests": [{
+    "id": "5b34235d-8dd8-4814-9411-03eca8148653",
+    "name": "imdb-wandavision",
+    "commands": [{
+      "id": "b2a90230-8fed-459e-99b1-f167aa1c1c39",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e948e56-54b2-4e42-92d7-0e8f42f59040",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "835x691",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e941f87-0527-4ab8-acfa-574316383359",
+      "comment": "",
+      "command": "type",
+      "target": "id=suggestion-search",
+      "targets": [
+        ["id=suggestion-search", "id"],
+        ["name=q", "name"],
+        ["css=#suggestion-search", "css:finder"],
+        ["xpath=//input[@id='suggestion-search']", "xpath:attributes"],
+        ["xpath=//form[@id='nav-search-form']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "wandavision"
+    }, {
+      "id": "e84b792a-a744-41be-b6a1-2c5768ae38cb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.\\_2mXTyZmtWnrwCBj9tuEhuK .\\_2NPnhnjxKTlB8HDsb7RtwX",
+      "targets": [
+        ["css=.\\_2mXTyZmtWnrwCBj9tuEhuK .\\_2NPnhnjxKTlB8HDsb7RtwX", "css:finder"],
+        ["xpath=//li[@id='react-autowhatever-1--item-0']/a/div[2]/div", "xpath:idRelative"],
+        ["xpath=//a/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9cb81c7f-b072-434d-ae5f-c80a93b9080f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bp_content",
+      "targets": [
+        ["css=.bp_content", "css:finder"],
+        ["xpath=//div[@id='title-overview-widget']/div/div[3]/a/div", "xpath:idRelative"],
+        ["xpath=//div[3]/a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06e78ac9-3cda-4698-90cf-f02308962d4d",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0a84410b-116b-4eb7-95ed-19d7e07753be",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5b34235d-8dd8-4814-9411-03eca8148653"]
+  }],
+  "urls": ["https://www.amazon.com/", "https://www.imdb.com/"],
+  "plugins": []
+}
