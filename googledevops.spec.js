@@ -14,25 +14,13 @@ describe('google-devops', function() {
     await driver.quit();
   })
   it('google-devops', async function() {
-    // Test name: google-devops
-    // Step # | name | target | value
-    // 1 | open | / | 
     await driver.get("https://www.google.com/")
-    // 2 | setWindowSize | 835x691 | 
-    await driver.manage().window().setRect(835, 691)
-    // 3 | selectFrame | index=0 | 
     await driver.switchTo().frame(0)
-    // 4 | click | xpath=//form/div/div[2] | 
-    await driver.findElement(By.xpath("//form/div/div[2]")).click()
-    // 5 | selectFrame | relative=parent | 
+    await driver.wait(until.elementLocated(By.css("#introAgreeButton .RveJvd"))).click()| 
     await driver.switchTo().defaultContent()
-    // 6 | click | name=q | 
     await driver.findElement(By.name("q")).click()
-    // 7 | type | name=q | devops
     await driver.findElement(By.name("q")).sendKeys("devops")
-    // 8 | sendKeys | name=q | ${KEY_ENTER}
     await driver.findElement(By.name("q")).sendKeys(Key.ENTER)
-    // 9 | click | xpath=//div[3]/div/div/div/a/h3/span | 
-    await driver.findElement(By.xpath("//div[3]/div/div/div/a/h3/span")).click()
+    await driver.wait(until.elementLocated(By.xpath("//div[3]/div/div/div/a/h3/span"))).click()
   })
 })
