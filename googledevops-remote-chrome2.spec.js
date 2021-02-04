@@ -5,7 +5,7 @@ describe('google-devops', function() {
   this.timeout(30000)
   let driver
   let vars
-  let capabilities = Capabilities.firefox();
+  let capabilities = Capabilities.chrome() // new Capabilities().setBrowserName("chrome")
 
   beforeEach(async function() {
 	 driver = new Builder()

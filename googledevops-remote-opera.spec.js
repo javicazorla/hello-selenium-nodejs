@@ -2,14 +2,14 @@ const { Builder, By, Key, until, Capabilities } = require('selenium-webdriver')
 const assert = require('assert')
 
 describe('google-devops', function() {
-  this.timeout(30000)
+  this.timeout(50000)
   let driver
   let vars
   let capabilities = new Capabilities().setBrowserName("operablink")
 
   beforeEach(async function() {
 	 driver = new Builder()
-        .usingServer("http://172.28.0.1:4444")
+        .usingServer("http://localhost:4444/wd/hub")
         .withCapabilities(capabilities)
         .build();
 
